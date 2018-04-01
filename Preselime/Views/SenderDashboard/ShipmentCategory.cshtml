@@ -1,0 +1,28 @@
+﻿<script>
+    function newMoveShipment() {
+        $.ajax({
+            url: '@Url.Action("NewMoveShipment","SenderDashboard")',
+            type: 'POST',
+            success: function (html) {
+                $("#tab1").html(html.result);
+            },
+            error: function (error) {}
+        }
+        )
+       
+    } 
+</script>
+
+<table class="table table-bordered">
+    <tr>
+        <td style="text-align:center;cursor:pointer;" onclick="newMoveShipment();">
+            <img src="~/Content/categories/moves_desktop2x.png" /><br />
+            <span>Stanovi, Kuce, Kancelarije</span>
+        </td>
+        <td style="text-align:center;">
+            <img src="~/Content/categories/vehicles_desktop2x.png" /><br />
+            <span>Automobili, Kamioni, Brodovi</span>
+        </td>
+    </tr>
+</table>
+

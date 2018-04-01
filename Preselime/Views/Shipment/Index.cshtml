@@ -1,0 +1,16 @@
+﻿@model Preselime.Models.Shipment.ShipmentModel
+@{
+    ViewBag.Title = "Index";
+    if (Session["SenderLogedIn"] != null)
+    {
+        Layout = "~/Views/Shared/_LogedInLayout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<h2>Pronadji posiljku</h2>
+
+@Html.Partial("ShipmentList",Model)

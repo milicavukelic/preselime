@@ -1,0 +1,52 @@
+﻿@model Preselime.Models.User.UserModel
+@{
+    ViewBag.Title = "SenderDashbord";
+    Layout = "~/Views/Shared/_LogedInLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <h1></h1>
+        <div role="tabpanel">
+            <div class="col-sm-3">
+                <ul class="nav nav-pills brand-pills nav-stacked" role="tablist">
+                    <li role="presentation" class="brand-nav active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Postavi oglas</a></li>
+                    <li role="presentation" class="brand-nav"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Moji oglasi</a></li>
+                    <li role="presentation" class="brand-nav"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Moj profil</a></li>                  
+                    <li role="presentation" class="brand-nav"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Promeni lozinku</a></li>
+
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="tab1">
+                        <p>
+                            <h2>Postavljanje oglasa</h2>
+                            <span>Izaberite kategoriju</span>
+                        </p>
+                        @Html.Partial("ShipmentCategory")
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab2">
+                        @Html.Partial("SenderShipments")
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="tab3">
+                        @Html.Partial("UserSenderProfile", Model)
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane" id="tab4">
+                        <p>
+                            Lorem ipsizzle dolor away amizzle, consectetuer pizzle elizzle. Nullizzle yo velizzle, check it out volutpizzle, quis, gravida vel, yo.
+                            Ma nizzle eget tortor. Sizzle eros. My shizz izzle dolizzle gizzle turpis tempizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle.
+                            Maurizzle pellentesque nibh izzle own yo'. Check it out in tortor. Pellentesque fizzle rhoncizzle nisi.
+                        </p>
+                        <p>
+                            In hac habitasse platea dictumst. Shizzlin dizzle dapibus. You son of a bizzle tellizzle urna, pretizzle fo shizzle mah nizzle fo rizzle, mah home g-dizzle,
+                            ghetto ac, check it out vitae, nunc. Shizzlin dizzle suscipizzle. Integizzle sempizzle velit sizzle dizzle.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

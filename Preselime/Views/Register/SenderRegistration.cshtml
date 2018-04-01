@@ -1,0 +1,46 @@
+﻿@model Preselime.Models.Register.RegistrationCarrierModel
+@{
+    ViewBag.Title = "SenderRegistration";
+}
+
+<div class="panel panel-default col-md-8 col-md-offset-2" style="padding:0;">
+    <div class="panel-heading" style="text-align:center;"><span style="color:red;">@ViewBag.Message</span></div>
+    <div class="panel-body" style="float:left;width:50%;">
+        @using (Html.BeginForm("CarrierRegister", "Register", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="form-group">
+            <label for="inputdefault">*Ime i prezime:</label><br />
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+        <div class="form-group">
+            <label for="inputdefault">*Email:</label><br />
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+        <div class="form-group">
+            <label for="inputdefault">*Lozinka:</label><br />
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div class="form-group">
+            <label for="inputdefault">*Potvrdi lozinku:</label><br />
+            @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+        </div>
+        <div class="form-group">
+            <span>Polja sa * su obavezna polja</span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Registruj se</button>
+        </div>
+}
+    </div>
+    <div class="panel-body" style="float:right;width:50%;">
+        <span>
+            By clicking Join uShip, you accept the terms and conditions of the uShip User Agreement and Privacy Policy. By entering an email address and clicking "Join uShip" you agree to be contacted by uShip for site notifications, transactional emails and select uShip promotions. We do not sell, rent or share your email and you may opt out of all emails at any time.
+        </span>
+    </div>
+</div>
+<div style="clear:both;"></div>
+

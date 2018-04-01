@@ -1,0 +1,32 @@
+﻿@model Preselime.Models.Shipment.ShipmentModel
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Naslov</th>
+            <th scope="col">Odrediste A</th>
+            <th scope="col">Odrediste B</th>
+            <th>Vreme isteka aukcije</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < Model.ShipmentListModel.Count; i++)
+        {
+        <tr>
+            <td>@Model.ShipmentListModel[i].Title</td>
+            <td>
+                <b>@Model.ShipmentListModel[i].DestinationA</b><br />
+                @Model.ShipmentListModel[i].DateFrom
+            </td>
+            <td>
+                <b>@Model.ShipmentListModel[i].DestinationB</b><br />
+                @Model.ShipmentListModel[i].DateTo
+            </td>
+            <td>
+                @Model.ShipmentListModel[i].AuctionLenght<br />
+                <span>Nema licitacija</span>
+            </td>
+        </tr>
+         }
+    </tbody>
+</table>
